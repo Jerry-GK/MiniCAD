@@ -46,7 +46,7 @@ public class FileManager {
 			else if (ls.get(i).equals("Rectangle"))
 				it = new Rectangle(Integer.parseInt(ls.get(++i)), Integer.parseInt(ls.get(i + 1)),
 						Integer.parseInt(ls.get(i + 2)), Integer.parseInt(ls.get(i + 3)));
-			else if (ls.get(i).equals("Oval"))
+			else if (ls.get(i).equals("Circle"))
 				it = new Circle(Integer.parseInt(ls.get(++i)), Integer.parseInt(ls.get(i + 1)),
 						Integer.parseInt(ls.get(i + 2)), Integer.parseInt(ls.get(i + 3)));
 			else {
@@ -76,7 +76,7 @@ public class FileManager {
 				str.append("Rectangle " + (int)((Rectangle) it).x + " " + (int)((Rectangle) it).y + " " + (int)((Rectangle) it).width + " "
 						+ (int)((Rectangle) it).height + " ");
 			else if (it instanceof Circle)
-				str.append("Oval " + ((Circle) it).x + " " + ((Circle) it).y + " " + ((Circle) it).width + " " + ((Circle) it).height
+				str.append("Circle " + ((Circle) it).x + " " + ((Circle) it).y + " " + ((Circle) it).width + " " + ((Circle) it).height
 						+ " ");
 			else {
 				String dest = ((Text) it).content;

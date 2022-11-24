@@ -65,7 +65,6 @@ public class ItemManager {
 		}
 	}
 
-	//闁瀚ㄩ崙鑺ユ殶閿涘矂锟藉瀚ㄦ稉搴礄x閿涘瘔閿涘甯存潻鎴犳畱閸ユ儳鑸伴敍宀冾啎缂冪晣electedIndex
 	public static void doSelect(int x, int y)
 	{
 		boolean flag = false;
@@ -92,7 +91,7 @@ public class ItemManager {
 						flag = true;
 					}
 				} else {
-					if (ovalDist((Circle) e, x, y) <= selectDelta) {
+					if (circleDist((Circle) e, x, y) <= selectDelta) {
 						selectedIndex = i;
 						e.isSelected = true;
 						flag = true;
@@ -165,13 +164,13 @@ public class ItemManager {
 		return (int)Math.sqrt(Math.pow(e.x - (double)x, 2) + Math.pow(e.y - (double)y, 2));
 	}
 
-	private static int ovalDist(Circle e, int x, int y)
+	private static int circleDist(Circle e, int x, int y)
 	{
 		int center_x = e.x + e.width / 2;
 		int center_y = e.y + e.height / 2;
-		int ovalR = (int)(Math.sqrt(e.width * e.height) / 2);
+		int circleR = (int)(Math.sqrt(e.width * e.height) / 2);
 		int distR = (int)Math.sqrt(Math.pow(center_x - x, 2) + Math.pow(center_y - y, 2));
 
-		return Math.abs(ovalR - distR);
+		return Math.abs(circleR - distR);
 	}
 }

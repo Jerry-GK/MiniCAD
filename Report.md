@@ -120,7 +120,7 @@
     						flag = true;
     					}
     				} else {
-    					if (ovalDist((Circle) e, x, y) <= selectDelta) {
+    					if (circleDist((Circle) e, x, y) <= selectDelta) {
     						selectedIndex = i;
     						e.isSelected = true;
     						flag = true;
